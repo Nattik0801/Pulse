@@ -1,0 +1,45 @@
+.consultation {
+    background: url(../img/bg_input_form.jpg) center center /cover no-repeat;
+    padding: 102px 0 108px 0;
+    color: $color_light;
+    min-height: 680px;
+
+    &__title {
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 150%;
+        text-transform: uppercase;
+        text-align: left;
+    }
+
+    &__descr {
+        margin-top: 8px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 150%;
+    }
+}
+
+.consultation {
+    @media screen and (max-width:1216px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    @media screen and (max-width:576px) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    &__title {
+        @media screen and (max-width:576px) {
+            font-size: 24px
+        }
+    }
+
+    &__descr {
+        @media screen and (max-width:576px) {
+            font-size: 18px
+        }
+    }
+}
