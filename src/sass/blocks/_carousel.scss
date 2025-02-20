@@ -27,3 +27,41 @@
         right: -66px;
     }
 }
+
+.carousel {
+    &__inner {
+        @media screen and (max-width:1216px) {
+            width: 500px;
+        }
+
+        @media screen and (max-width:576px) {
+            width: 350px;
+        }
+
+        img {
+            @media screen and (max-width:1216px) {
+
+                // width: 500px;
+                height: 100%;
+            }
+
+        }
+    }
+
+    .slick-prev,
+    .slick-next {
+        @media screen and (max-width:768px) {
+            top: 110%;
+            left: 20%;
+        }
+    }
+
+    .slick-next {
+        @media screen and (max-width:768px) {
+
+            left: auto;
+            right: 20%;
+
+        }
+    }
+}
