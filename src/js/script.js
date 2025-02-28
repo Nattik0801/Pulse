@@ -55,4 +55,78 @@ $(document).ready(function () {
     toggleSlide('.catalog-item__link');
     toggleSlide('.catalog-item__back');
 
+    //модальные окна
+    $('[data-modal=consultation]').on('click', function () {
+        $('.overlay, #consultation').fadeIn('slow');
+    });
+
+    $('.modal__close').on('click', function () {
+        $('.overlay, #consultation, #thanks, #order').fadeOut('slow');
+    });
+    // $('.button_mini').on('click', function () {
+    //     $('.overlay, #order').fadeIn('slow');
+    // });
+    $('.button_mini').each(function (i) {
+        $(this).on('click', function () {
+            $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
+            $('.overlay, #order').fadeIn('slow');
+        })
+    });
+
+    // $('#consultation-form').validate();
+    // $('#consultation form').validate({
+    //     rules: {
+    //         name: {
+    //             required: true,
+    //             minlength: 2
+    //         },
+    //         phone: "required",
+    //         email: {
+    //             required: true,
+    //             email: true
+    //         }
+    //     },
+    //     messages: {
+    //         name: {
+    //             required: "Пожалуйста, введите свое имя",
+    //             minlength: jQuery.validator.format("Введите не менее  {0} символов!")
+    //         },
+    //         phone: "Пожалуйста, введите свой номер телефона",
+    //         email: {
+    //             required: "Пожалуйста, введите свою почту",
+    //             email: "Неверно введен адрес почты"
+    //         }
+    //     }
+    // });
+    // $('#order form').validate();
+
+    function valideForms(form) {
+        $(form).validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+                phone: "required",
+                email: {
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {
+                name: {
+                    required: "Пожалуйста, введите свое имя",
+                    minlength: jQuery.validator.format("Введите не менее  {0} символов!")
+                },
+                phone: "Пожалуйста, введите свой номер телефона",
+                email: {
+                    required: "Пожалуйста, введите свою почту",
+                    email: "Неверно введен адрес почты"
+                }
+            }
+        });
+    }
+    valideForms('#consultation-form');
+    valideForms('#consultation form');
+    valideForms('#order form');
 });

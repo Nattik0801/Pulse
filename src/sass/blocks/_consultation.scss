@@ -18,6 +18,16 @@
         font-size: 20px;
         line-height: 150%;
     }
+
+    .error {
+        border: 1px solid $main_color;
+    }
+
+    label.error {
+        border: none;
+
+        margin-bottom: 15px;
+    }
 }
 
 .consultation {
